@@ -1,0 +1,109 @@
+{% extends "landing/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<!-- Main -->
+	<div id="main">
+
+	<!-- One -->
+		<section id="one">
+			<div class="image main" data-position="center">
+				<img src="{% static 'landing/images/Psicologia1CutContacto.jpg' %}" alt="" />
+			</div>
+			<div class="container">
+				<header class="major">
+					<h2>Cree que es la única persona que necesita ayuda</h2>
+					<p>No espere que los problemas le superen<br/></p>
+				</header>
+		<!--	<p>Aunque mucha gente consigue ayuda profesional para sus problemas personales, a otras les puede ser difícil empezar a reconocer cuando ellas o sus seres queridos necesitan ayuda.<br /> -->
+				<p>Un problema no tiene que ser grave o abrumador o llegar a producir una crisis para que pueda beneficiarse de la ayuda psicológica.<br/><br/>
+				No espere a estar agobiado o angustiado: La espera puede ser causa de un sufrimiento innecesario y el resultado será que un problema se empeore con el tiempo.</p>
+			</div>
+		</section>
+
+	<!-- Two -->
+		<section id="two">
+			<div class="container">
+				<h3>Qué hacemos</h3>
+				<h4>Áreas profesionales</h4>
+				<p>Estamos a tu disposición si necesitas consultarnos en las siguientes Áreas y podremos atenderte en diferentes campos como:</p>
+				<ul class="feature-icons">
+					<li class="fa-code">Psicología Clínica y Salud</li>
+					<li class="fa-cubes">Depresión</li>
+					<li class="fa-book">Educación</li>
+					<li class="fa-code">Sexología</li>
+					<li class="fa-bolt">Intervención Social</li>
+					<li class="fa-users">Mediación</li>
+				</ul>
+			</div>
+		</section>
+
+	<!-- Three -->
+		<section id="three">
+			<div class="container">
+				<h3>Causas a considerar</h3>
+				<p>Hay muchas razones por las que sería conveniente contar con la asistencia de un psicólogo. Las dificultades en el hogar, el trabajo o la escuela las pueden tener cualquier persona. Considere la posibilidad de consultar con un profesional.</p>
+				<div class="features">
+					<article>
+						<a href="/" class="image"><img src="{% static 'landing/images/pic01M.jpg' %}" alt="" /></a>
+						<div class="inner">
+							<h4>Porqué ir al psicólogo</h4>
+							<p>Puede que tenga que hablar con un psicólogo para analizar y comprender el problema, para desarrollar estrategias beneficiosas y realizar los cambios que necesita hacer.</p>
+						</div>
+					</article>
+					<article>
+						<a href="/" class="image"><img src="{% static 'landing/images/pic02M.jpg' %}" alt="" /></a>
+						<div class="inner">
+							<h4>Ayuda en la infancia</h4>
+							<p>Usted sospecha o alguien cercano a usted tiene un problema de aprendizaje o va mal en la escuela y lo que necesita es una evaluación.</p>
+						</div>
+					</article>
+					<article>
+						<a href="/" class="image"><img src="{% static 'landing/images/pic03M.jpg' %}" alt="" /></a>
+						<div class="inner">
+							<h4>Sufre de fobias</h4>
+							<p> En otras palabras, tiene demasiado miedo a ciertas cosas, tales como a los insectos, salir a la calle, relacionarse con otras personas o a ciertos alimentos.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+	<!-- Four -->
+		<section id="four">
+			<div class="container">
+				<h3>Contáctame</h3>
+				<p>Os podremos atender en: C/ Forja, nº25 Puerto de la torre Málaga 29190 TELÉFONO:  626 28 93 06</p>
+				<form novalidate="novalidate" method="post" name="contact">
+					{% csrf_token %}
+					<div class="row gtr-uniform">
+						<div class="col-6 col-12-xsmall">
+							<!-- <input type="text" name="name" id="name" placeholder="Nombre" /> -->
+							{{ form.nombre }}
+						</div>
+						<div class="col-6 col-12-xsmall">
+							<!-- <input type="email" name="email" id="email" placeholder="Email" /> -->
+							{{ form.from_email }}
+						</div>
+						<div class="col-12">
+							<!-- <input type="text" name="subject" id="subject" placeholder="Asunto" /> -->
+							{{ form.asunto }}
+						</div>
+						<div class="col-12">
+							<!-- <textarea name="message" id="message" placeholder="Mensaje" rows="6"></textarea> -->
+							{{ form.mensaje }}
+						</div>
+						<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" class="primary" value="Enviar Mensaje" /></li>
+								<li><input type="reset" value="Borrar todo" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+{% endblock %}
